@@ -1,5 +1,5 @@
 {
-  "name": "cast",
+  "name": "castjs",
   "version": "0.0.1",
   "description": "Validation and conversion library",
   "main": "index.js",
