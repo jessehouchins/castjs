@@ -69,6 +69,23 @@ You can add you own custom modules using the `cast.register` method. All modules
 
 __Note:__ an unregister method is also provided for testing purposes: `cast.unregister('moduleOne', 'ModuleTwo', ...)`
 
+### Aliases
+
+You can add aliases for you modules of module methods by including the alias/method mapping in your module definition:
+
+``` javascript
+
+  cast.register({
+    moduleName: {
+      initialize: function(){ ... },
+      methodName: function(){ ... },
+      methodAlias: 'methodName'
+    },
+    moduleAlias: 'moduleName'
+  })
+
+```
+
 ### Setting the State
 
 All of the methods in you module will change the state of the cast in some way or another. There a three built in helpers: `set`, `fail`, and `rangeError`. Here is an example of how they could be used:
@@ -88,8 +105,9 @@ All of the methods in you module will change the state of the cast in some way o
 
 Custom modules have access to a handfull of useful helpers for parsing data. These include:
 
+- `makeType(x)` converts `x` to a the same data type as the module by running it's initialize function and returning the value.
 - `makeString(x)` converts `x` to a string if it can, or falls back to an empty string.
-- `makeNumber(x,d)` parses `x` as a number, optionally to `d` decimal places or returns `NaN`. 
+- `makeNumber(x,d)` parses `x` as a number, optionally to `d` decimal places or returns `NaN`.
 - `realTypeof(x)` returns the actual type of `x`. Includes support for arrays and date objects.
 - `trimString(x)` removes the leading and trailing whitespace from single line strings. Multi-line strings are not changed.
 - `isBlank(x)` returns true if `x` is `null`, `undefined` or an empty string.
