@@ -71,7 +71,7 @@ __Note:__ an unregister method is also provided for testing purposes: `cast.unre
 
 ### Aliases
 
-You can add aliases for you modules of module methods by including the alias/method mapping in your module definition:
+You can add aliases for you modules or module methods by including the alias/method mapping in your module definition:
 
 ``` javascript
 
