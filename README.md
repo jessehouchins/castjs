@@ -8,7 +8,7 @@ The cast.js library was written to provide convenient methods for validating and
 
 ## Syntax
 
-The syntax was designed to be human readable. See [the Module API](Module-API) for complete documentation of built in modules.
+The syntax was designed to be human readable. See [the Module API](https://github.com/jessehouchins/castjs/Module-API) for complete documentation of built in modules.
 
 ``` javascript
 
