@@ -88,7 +88,7 @@ You can add aliases for you modules or module methods by including the alias/met
 
 ### Setting the State
 
-All of the methods in you module will change the state of the cast in some way or another. There a three built in helpers: `set`, `fail`, and `rangeError`. Here is an example of how they could be used:
+All of the methods in you module will change the state of the cast in some way or another. There are three built in helpers: `set`, `fail`, and `rangeError`. Here is an example of how they could be used:
 
 ``` javascript
 
@@ -103,7 +103,7 @@ All of the methods in you module will change the state of the cast in some way o
 
 ### Built-in Helpers
 
-Custom modules have access to a handfull of useful helpers for parsing data. These include:
+Custom modules have access to a handfull of useful helpers for parsing data. You can use these from within you module methods by calling `this.helperName(x)`.
 
 - `makeType(x)` converts `x` to a the same data type as the module by running it's initialize function and returning the value.
 - `makeString(x)` converts `x` to a string if it can, or falls back to an empty string.
