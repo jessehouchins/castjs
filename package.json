@@ -1,0 +1,26 @@
+{
+  "name": "cast",
+  "version": "0.0.1",
+  "description": "Validation and conversion library",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jessehouchins/castjs.git"
+  },
+  "keywords": [
+    "validation",
+    "conversion",
+    "data",
+    "casting"
+  ],
+  "author": "Jesse Houchins",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "gitHead": "a16bc688a0db2c6a043ac938201493d1f99c006e"
+}
