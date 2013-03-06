@@ -13,44 +13,44 @@ module("Core") ////////////////////////////////////
   })
 
   test("Register/unregister many modules at once", 7, function(){
-    var a, a1, a2
-    var b, b1
+    var A, A1
+    var B, B1, B2
 
     cast.register({
-      a: {
-        initialize: function(x){ a = x },
-        a1: function(x){ a1 = x }
+      A: {
+        initialize: function(x){ A = x },
+        A1: function(x){ A1 = x }
       },
-      b: {
-        initialize: function(x){ b = x },
-        b1: function(x){ b1 = x },
-        b2: function(x){ b2 = x }
+      B: {
+        initialize: function(x){ B = x },
+        B1: function(x){ B1 = x },
+        B2: function(x){ B2 = x }
       }
     })
 
-    cast('A').a().a1()
-    cast('B').b().b1().b2()
+    cast('A').A().A1()
+    cast('B').B().B1().B2()
 
-    ok(cast().a, "Module `a` registered")
-    ok(cast().b, "Module `b` registered")
-    ok(a === 'A', "`a` constructor called.")
-    ok(a1 === 'A', "`a.a1` chained method called.")
-    ok(b === 'B', "`b` constructor called.")
-    ok(b1 === 'B', "`b.b1` chained method called.")
-    ok(b2 === 'B', "`b.b1.b2` chained method called.")
+    ok(cast().A, "Module `A` registered")
+    ok(cast().B, "Module `B` registered")
+    ok(A === 'A', "`A` constructor called.")
+    ok(A1 === 'A', "`A.A1` chained method called.")
+    ok(B === 'B', "`B` constructor called.")
+    ok(B1 === 'B', "`B.B1` chained method called.")
+    ok(B2 === 'B', "`B.B1.B2` chained method called.")
 
-    cast.unregister('a','b')
+    cast.unregister('A','B')
   })
 
   test("Initialize a module", 2, function(){
-    var a
-    cast.register('a', function(x){ a = x })
-    cast('A').a()
+    var A
+    cast.register('A', function(x){ A = x })
+    cast('A').A()
 
-    ok(cast().a, "Register a single module." )
-    ok(a === 'A', "Initialize a registered module." )
+    ok(cast().A, "Register a single module." )
+    ok(A === 'A', "Initialize a registered module." )
 
-    cast.unregister('a')
+    cast.unregister('A')
   })
 
   test("Handle blank data", 7, function(){
@@ -163,7 +163,7 @@ module("Date") //////////////////////////////////////
   test("format", 23, function(){
     var date = "July 3 1981 09:08:04"
     function testFormat(format, expected) {
-      result = cast(date).date().format(format).value
+      var result = cast(date).date().format(format).value
       ok(result === expected, "Format date \""+format+"\" -> \""+result+"\"")
     }
 
