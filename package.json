@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "description": "Validation and conversion library",
   "main": "index.js",
+  "dependencies" : {
+    "grunt" : "0.4.x",
+    "qunit": "0.5.15"
+  },
   "directories": {
     "test": "tests"
   },
