@@ -1,4 +1,4 @@
-module("Core") ////////////////////////////////////
+QUnit.module("Core") ////////////////////////////////////
 
   test("Register/unregister a single module", 2, function(){
     cast.register('unregisterTest1', function(x){})
@@ -127,7 +127,7 @@ module("Core") ////////////////////////////////////
   })
 
 
-module("Date") //////////////////////////////////////
+QUnit.module("Date") //////////////////////////////////////
 
   test("initialize", 1, function(){
     var date = cast("July 31 1981").date().value
@@ -195,7 +195,7 @@ module("Date") //////////////////////////////////////
   })
 
 
-module('Text') /////////////////////////////
+QUnit.module('Text') /////////////////////////////
 
   test('initialize', 4, function(){
     var multilineText = "  First line.  \n  Second line.  "
@@ -218,7 +218,7 @@ module('Text') /////////////////////////////
   // })
 
 
-module('Email') /////////////////////////////
+QUnit.module('Email') /////////////////////////////
 
   test('initialize', 3, function(){
     ok(cast("foo@bar.com").email().value === 'foo@bar.com', "Initialize simple email.")
@@ -227,7 +227,7 @@ module('Email') /////////////////////////////
   })
 
 
-module('Number') /////////////////////////////
+QUnit.module('Number') /////////////////////////////
 
   test('initialize', 3, function(){
     ok(cast("4.78").number().value === 4.78, "Initialize float from string.")
@@ -250,7 +250,7 @@ module('Number') /////////////////////////////
   })
 
 
-module('Integer') /////////////////////////////
+QUnit.module('Integer') /////////////////////////////
 
   test('initialize', 3, function(){
     ok(cast("4.28").integer().value === 4, "Initialize integer from string.")
